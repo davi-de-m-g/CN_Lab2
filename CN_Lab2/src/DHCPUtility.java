@@ -29,9 +29,8 @@ public class DHCPUtility {
 			 * hardware address.
 			 */
 			NetworkInterface ni = NetworkInterface.getByInetAddress(address);
-			//mac = ni.getHardwareAddress();
-			//mac = ni.getHardwareAddress();
-			mac [0] = "FF:FF:FF:FF:FF:FF";
+			mac = ni.getHardwareAddress();
+			//mac =  hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d");
 			
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
@@ -41,7 +40,15 @@ public class DHCPUtility {
 		assert(mac != null);
 		return mac;
 	}
-	
+	public static byte[] hexStringToByteArray(String s) {
+	    int len = s.length();
+	    byte[] data = new byte[len / 2];
+	    for (int i = 0; i < len; i += 2) {
+	        data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
+	                             + Character.digit(s.charAt(i+1), 16));
+	    }
+	    return data;
+	}
 	public static void printMacAddress() {
 		try {
 			InetAddress address = InetAddress.getLocalHost();
