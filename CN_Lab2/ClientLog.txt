@@ -1,0 +1,20 @@
+2016-03-07 15:49:16.51 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-07 15:49:52.483 - Server Uptime: 13ms
+DHCPClient: init complete server started
+
+2016-03-07 15:50:03.08 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-07 15:50:16.595 - Server Uptime: 12ms
+DHCPClient: init complete server started
+
+2016-03-07 15:50:16.605 - Server Uptime: 16ms
+DHCPClient: Broadcasting Discover Message
+2016-03-07 15:54:55.297 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-07 15:55:03.328 - Server Uptime: 12ms
+DHCPClient: init complete server started
+
