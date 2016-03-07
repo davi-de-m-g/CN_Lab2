@@ -10,11 +10,14 @@ import java.util.Arrays;
  
 public class DHCPClient {
 	private static final int MAX_BUFFER_SIZE = 1024; // 1024 bytes
-	private int listenPort =  8853;//1338;l
+	private int listenPort =  22345;//1338;l
 	private String serverIP = "127.0.0.1";
 	private int serverPort =  67;//1337;
 
-	//public DHCPClient(int servePort) { listenPort = servePort; new DHCPServer(); }t
+	public DHCPClient(int servePort) {
+		listenPort = servePort;
+		new DHCPServer();
+	}
  
 	public DHCPClient() throws IOException {
 		System.out.println("Connecting to DHCPServer at " + serverIP + " on port " + serverPort + "...");
@@ -34,9 +37,9 @@ public class DHCPClient {
 		DatagramPacket p = new DatagramPacket(payload, length, InetAddress.getByName(serverIP), serverPort);
 		socket.send(p); //throws i/o exception
 		socket.send(p);
-		String str = new String(p.getData(), StandardCharsets.UTF_8);
+		String str = new String(p.getData(), StandardCharsets.UTF_8); 
 		System.out.println("Connection Established Successfully!");
-		System.out.println("(DHCPClient) Sending data: " + str);
+		System.out.println("(DHCPClient) Sending data: " + str); //De andere (Arrays.toString(p.getData())) werkte niet.
 	}
  
 	public static void main(String[] args) throws IOException {
