@@ -16,8 +16,8 @@ public class Test {
     	//Dhcpclient.printMacAddress();
     	
     	///
-    	DHCPClient client = new DHCPClient(PORT);
     	DHCPServer server = new DHCPServer(PORT);
+    	DHCPClient client = new DHCPClient(PORT);
     	//servertje.sendDing(ding);
     	
     	

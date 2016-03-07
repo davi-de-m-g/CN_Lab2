@@ -10,13 +10,13 @@ import java.util.Arrays;
  
 public class DHCPClient {
 	private static final int MAX_BUFFER_SIZE = 1024; // 1024 bytes
-	private int listenPort =  22345;//1338;l
+	private int listenPort =  8853;//1338;l
 	private String serverIP = "127.0.0.1";
 	private int serverPort =  67;//1337;
 
-	public DHCPClient(int servePort) {
+	public DHCPClient(int servePort) throws IOException {
 		listenPort = servePort;
-		new DHCPServer();
+		new DHCPClient();
 	}
  
 	public DHCPClient() throws IOException {

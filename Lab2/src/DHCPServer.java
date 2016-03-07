@@ -6,7 +6,7 @@ import java.util.Arrays;
  
 public class DHCPServer {
         private static final int MAX_BUFFER_SIZE = 1024; // 1024 bytes
-        private int listenPort = 22345;//1337;
+        private int listenPort = 8853;//1337;
 
         public DHCPServer(int servePort) {
                 listenPort = servePort;
