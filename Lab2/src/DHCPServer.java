@@ -51,13 +51,13 @@ public class DHCPServer {
          * @param args
          */
         public static void main(String[] args) {
-                DHCPServer server;
+                /*DHCPServer server;
                 if (args.length >= 1) {
                         server = new DHCPServer(Integer.parseInt(args[0]));
                 } else {
                         server = new DHCPServer();
-                }
- 
+                }*/
+                DHCPServer server = new DHCPServer();
         }
  
 }

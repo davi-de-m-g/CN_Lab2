@@ -35,7 +35,7 @@ public class DHCPClient {
 		payload[4] = 'o';
 		payload[5] = '!';
 		DatagramPacket p = new DatagramPacket(payload, length, InetAddress.getByName(serverIP), serverPort);
-		socket.send(p); //throws i/o exception
+		socket.send(p); //throws i/o exception0
 		socket.send(p);
 		String str = new String(p.getData(), StandardCharsets.UTF_8); 
 		System.out.println("Connection Established Successfully!");
@@ -50,6 +50,7 @@ public class DHCPClient {
 		//DHCPMessage msgTest = new DHCPMessage();
 		//printMacAddress();
 		// }
+    	DHCPClient client = new DHCPClient();
 
 	}
 	
