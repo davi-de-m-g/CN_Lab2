@@ -6,8 +6,6 @@ import java.net.UnknownHostException;
 //http://www.java2s.com/Tutorials/Java/Java_Network/0050__Java_Network_UDP_Multicast.htm
 //http://www.nakov.com/inetjava/lectures/part-1-sockets/InetJava-1.5-UDP-and-Multicast-Sockets.html
 
-
-
 public class MulticastSocketServer {
     
     final static String INET_ADDR = "224.0.0.3";

@@ -5,29 +5,22 @@ import java.net.MulticastSocket;
 import java.net.UnknownHostException;
 
 public class MulticastSocketClient {
-    
-    final static String INET_ADDR = "224.0.0.3";
-    final static int PORT = 8888;
 
     public static void main(String[] args) throws UnknownHostException {
 
     }
     
     public void test(String inetaddr, int port) throws UnknownHostException {
-        // Get the address that we are going to connect to.
-        InetAddress address = InetAddress.getByName(inetaddr);
+        InetAddress address = InetAddress.getByName(inetaddr);        // Get the address that we are going to connect to.
+
         
-        // Create a buffer of bytes, which will be used to store
-        // the incoming bytes containing the information from the server.
-        // Since the message is small here, 256 bytes should be enough.
-        byte[] buf = new byte[256];
+        byte[] buf = new byte[256];				// Create a buffer of bytes, which will be used to store
+        										// the incoming bytes containing the information from the server.
+        										// Since the message is small here, 256 bytes should be enough.
         
-        // Create a new Multicast socket (that will allow other sockets/programs
-        // to join it as well.
-        try (MulticastSocket clientSocket = new MulticastSocket(port)){
-            //Joint the Multicast group.
-            clientSocket.joinGroup(address);
-     
+        try (MulticastSocket clientSocket = new MulticastSocket(port)){	// Create a new Multicast socket (that will allow other sockets/programs
+        	clientSocket.joinGroup(address);							// to join it as well.
+            
             while (true) {
                 // Receive the information and print it.
                 DatagramPacket msgPacket = new DatagramPacket(buf, buf.length);

@@ -9,7 +9,7 @@ import java.util.Arrays;
  
 public class DHCPClient {
 	private static final int MAX_BUFFER_SIZE = 1024; // 1024 bytes
-	private int listenPort =  68;//1338;l
+	private int listenPort =  8853;//1338;l
 	private String serverIP = "127.0.0.1";
 	private int serverPort =  67;//1337;
 
@@ -34,22 +34,16 @@ public class DHCPClient {
 		socket.send(p); //throws i/o exception
 		socket.send(p);
 		System.out.println("Connection Established Successfully!");
-		System.out.println("Sending data: " + Arrays.toString(p.getData()));
+		System.out.println("(DHCPClient) Sending data: " + Arrays.toString(p.getData()));
 	}
  
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
 	public static void main(String[] args) throws IOException {
-		DHCPClient client;
 		/*
 		 * if (args.length >= 1) { server = new
 		 * DHCPClient(Integer.parseInt(args[0])); } else {
 		 */
-		client = new DHCPClient();
 		//DHCPMessage msgTest = new DHCPMessage();
-		printMacAddress();
+		//printMacAddress();
 		// }
 
 	}

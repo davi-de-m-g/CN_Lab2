@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.UnknownHostException;
 
 public class Main {
@@ -6,15 +7,16 @@ public class Main {
     final static int PORT = 8888;
     
     
-    public static void main(String[] args) throws UnknownHostException, InterruptedException  {
+    public static void main(String[] args) throws InterruptedException, IOException  {
     	MulticastSocketClient clientje = new MulticastSocketClient();
     	MulticastSocketServer servertje = new MulticastSocketServer();
+    	DHCPClient Dhcpclient = new DHCPClient();
     	
-    	servertje.test(INET_ADDR, PORT);
-    	clientje.test(INET_ADDR, PORT);
+    	//servertje.test(INET_ADDR, PORT);
+    	//clientje.test(INET_ADDR, PORT);
+    	//Dhcpclient.printMacAddress();
     	
-    	
-    	//DHCPDing ding = new DHCPDing();
+    	DHCPClient ding = new DHCPClient();
     	//servertje.sendDing(ding);
     	
     }
