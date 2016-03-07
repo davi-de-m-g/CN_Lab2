@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
  
 public class DHCPClient {
@@ -33,8 +34,9 @@ public class DHCPClient {
 		DatagramPacket p = new DatagramPacket(payload, length, InetAddress.getByName(serverIP), serverPort);
 		socket.send(p); //throws i/o exception
 		socket.send(p);
+		String str = new String(p.getData(), StandardCharsets.UTF_8);
 		System.out.println("Connection Established Successfully!");
-		System.out.println("(DHCPClient) Sending data: " + Arrays.toString(p.getData()));
+		System.out.println("(DHCPClient) Sending data: " + str);
 	}
  
 	public static void main(String[] args) throws IOException {
