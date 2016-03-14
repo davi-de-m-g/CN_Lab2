@@ -1,4 +1,4 @@
-2016-03-07 15:49:16.51 - Server Uptime: 11ms
+2016-03-07 15:49:16.51 - Server Uptime: 11mss
 DHCPClient: init complete server started
 
 2016-03-07 15:49:52.483 - Server Uptime: 13ms

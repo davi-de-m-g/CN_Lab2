@@ -1,4 +1,4 @@
-2016-03-14 14:01:23.2 - Server Uptime: 632ms
+2016-03-14 14:01:23.2 - Server Uptime: 632mss
 DHCPServer: init complete server started
 
 2016-03-14 14:02:27.766 - Server Uptime: 171ms
