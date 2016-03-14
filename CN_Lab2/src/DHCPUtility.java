@@ -30,7 +30,7 @@ public class DHCPUtility {
 			 */
 			NetworkInterface ni = NetworkInterface.getByInetAddress(address);
 			mac = ni.getHardwareAddress();
-			//mac =  hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d");
+			//mac =  hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d");test
 			
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
