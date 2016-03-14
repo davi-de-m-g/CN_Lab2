@@ -31,38 +31,18 @@ public class DHCPClient {
 	 */
 
 	public DHCPClient() {
-		//set client start time
+		//setting dhcp_client startingtime
 		startTime = System.currentTimeMillis();
 		
 		System.out.println("Connecting to DHCPServer at " + serverIP + " on port " + serverPort + "...");
 		try {
-			socket = new DatagramSocket(listenPort);  // ipaddress? throws socket exception
+			socket = new DatagramSocket(listenPort);  
 			assignedIP = false;   //ip not assigned when client starts
-			
-			//bind socket to correct source ip
-			/*if (assignedIP) {
-				InetSocketAddress assigned;
-				assigned = new InetSocketAddress(
-						InetAddress.getByAddress(clientIP), listenPort);
-				socket.bind(assigned);
-			} else {  //source ip is 0.0.0.0 when requesting ip
-				InetSocketAddress broadcast = new InetSocketAddress(
-						InetAddress.getByName("0.0.0.0"), listenPort);
-				//socket.close();
-				socket = new DatagramSocket(null);
-				socket.bind(broadcast);
-			}*/
-			
-			
-			//sendTestPacket();
-			
-
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		NL = System.getProperty("line.separator");
-		log(logFileName, "DHCPClient: init complete server started" + NL);
+		printToConsole("DHCPClient: init complete server started" + "\n");
 	}
 
 	public DHCPClient(int parseInt) {
@@ -146,20 +126,10 @@ public class DHCPClient {
 		return p.getData();
 
 	}
-	
-	private static void log(String fileName, String transcript) {
+	private static void printToConsole(String message) {
 		Timestamp logTime = new Timestamp(System.currentTimeMillis());
-		String data = new String(logTime.toString() + " - " + printUpTime() + NL + transcript + NL);
+		String data = new String(logTime.toString() + " - " + printUpTime() + "\n" + message + "\n");
 		System.out.println(data);
-		 try {
-			BufferedWriter outputStream = new BufferedWriter(new FileWriter(fileName,true));
-			outputStream.write(data);
-			outputStream.flush();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 	}
 	
 	public static long upTime() {
@@ -187,16 +157,16 @@ public class DHCPClient {
 		msgTest.discoverMsg(DHCPUtility.getMacAddress());
 		DHCPUtility.printMacAddress();
 		sendPacketToLab(msgTest.externalize());
-		log(logFileName, "DHCPClient: Broadcasting Discover Message");
+		printToConsole("DHCPClient: Broadcasting Discover Message");
 		DHCPMessage msg = new DHCPMessage(receivePacket());
 		msg.printMessage();
-		log(logFileName, "DHCPClient: DHCP Offer Message Received"+ NL + msg.toString());
+		printToConsole("DHCPClient: DHCP Offer Message Received"+ "\n" + msg.toString());
 		msgTest.requestMsg(DHCPUtility.getMacAddress(), new byte[]{(byte)192,(byte)168,1,9});
 		broadcastPacket(msgTest.externalize());
-		log(logFileName, "DHCPClient: Broadcasting Request Message");
+		printToConsole("DHCPClient: Broadcasting Request Message");
 		DHCPMessage msg1 = new DHCPMessage(receivePacket());
 		msg1.printMessage();
-		log(logFileName, "DHCPClient: DHCP ACK Message Received"+ NL + msg1.toString());
+		printToConsole("DHCPClient: DHCP ACK Message Received"+ "\n" + msg1.toString());
 		// }
 
 	}
