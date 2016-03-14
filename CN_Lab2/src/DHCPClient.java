@@ -13,9 +13,9 @@ import java.util.Arrays;
 
 public class DHCPClient {
 	private static final int MAX_BUFFER_SIZE = 1024; // 1024 bytesa
-	private static int listenPort =  68;
-	private static String serverIP = "127.0.0.1";
-	private static int serverPort =  67;
+	private static int listenPort =  1234;
+	private static String serverIP = "10.33.14.246";
+	private static int serverPort =  1234;
 	
 	private static DatagramSocket socket = null;
 	private static boolean assignedIP;
@@ -99,7 +99,6 @@ public class DHCPClient {
 		assert(payload.length <= MAX_BUFFER_SIZE);
 		
 			try {
-
 				DatagramPacket p = new DatagramPacket(payload, payload.length, InetAddress.getByName(serverIP), serverPort);
 				System.out.println("Sending data: " + 
 						//Arrays.toString(p.getData()) + 
@@ -117,13 +116,16 @@ public class DHCPClient {
 			}
 		
 	}
-	
 	public static  void broadcastPacket(byte[] payload) {
 		assert(payload.length <= MAX_BUFFER_SIZE);
 		String broadcastIP = "255.255.255.255";
 		sendPacket(payload,broadcastIP);
 	}
-	
+	public static  void sendPacketToLab(byte[] payload) {
+		assert(payload.length <= MAX_BUFFER_SIZE);
+		String labIP = "10.33.14.246";
+		sendPacket(payload,labIP);
+	}
 	public static byte[] receivePacket() {
 		System.out.println("Listening on port " + listenPort + "...");
 		byte[] payload = new byte[MAX_BUFFER_SIZE];
@@ -184,7 +186,7 @@ public class DHCPClient {
 	    DHCPMessage msgTest = new DHCPMessage();
 		msgTest.discoverMsg(DHCPUtility.getMacAddress());
 		DHCPUtility.printMacAddress();
-		broadcastPacket(msgTest.externalize());
+		sendPacketToLab(msgTest.externalize());
 		log(logFileName, "DHCPClient: Broadcasting Discover Message");
 		DHCPMessage msg = new DHCPMessage(receivePacket());
 		msg.printMessage();

@@ -140,3 +140,131 @@ DHCPClient: init complete server started
 2016-03-14 15:08:11.841 - Server Uptime: 11ms
 DHCPClient: init complete server started
 
+2016-03-14 15:16:06.588 - Server Uptime: 18ms
+DHCPClient: init complete server started
+
+2016-03-14 15:21:22.625 - Server Uptime: 13ms
+DHCPClient: init complete server started
+
+2016-03-14 15:23:27.418 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 15:23:37.406 - Server Uptime: 12ms
+DHCPClient: init complete server started
+
+2016-03-14 15:25:56.847 - Server Uptime: 13ms
+DHCPClient: init complete server started
+
+2016-03-14 15:28:18.929 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 15:28:33.797 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 15:32:32.734 - Server Uptime: 13ms
+DHCPClient: init complete server started
+
+2016-03-14 15:33:23.441 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 15:34:44.829 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 15:34:44.842 - Server Uptime: 18ms
+DHCPClient: Broadcasting Discover Message
+2016-03-14 15:34:44.873 - Server Uptime: 49ms
+DHCPClient: DHCP Offer Message Received
+=========================================================================
+|| Operation Code: 2 | Hardware Type: 1 | Hardware Length: 6 | Hops: 0 ||
+-------------------------------------------------------------------------
+||                               xid: 0                               ||
+-------------------------------------------------------------------------
+||                     secs: 0 | flags: 0 (UNICAST)                    ||
+-------------------------------------------------------------------------
+||                           cIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                       yIAddr: 192.172.16.181                       ||
+-------------------------------------------------------------------------
+||                        sIAddr: 10.33.14.246                        ||
+-------------------------------------------------------------------------
+||                           gIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                         cHAddr: 5-5-5-5-5-5                         ||
+-------------------------------------------------------------------------
+||                               sName:                                ||
+-------------------------------------------------------------------------
+||                                file:                                ||
+=========================================================================
+optionID: 54 optionLength: 4 optionData: 10.33.14.246
+optionID: 53 optionLength: 1 optionData: DHCPOFFER
+optionID: 51 optionLength: 4 optionData: 86400 secs
+=========================================================================
+
+2016-03-14 15:34:44.895 - Server Uptime: 71ms
+DHCPClient: Broadcasting Request Message
+2016-03-14 15:36:07.94 - Server Uptime: 10ms
+DHCPClient: init complete server started
+
+2016-03-14 15:36:07.953 - Server Uptime: 17ms
+DHCPClient: Broadcasting Discover Message
+2016-03-14 15:36:07.976 - Server Uptime: 40ms
+DHCPClient: DHCP Offer Message Received
+=========================================================================
+|| Operation Code: 2 | Hardware Type: 1 | Hardware Length: 6 | Hops: 0 ||
+-------------------------------------------------------------------------
+||                               xid: 0                               ||
+-------------------------------------------------------------------------
+||                     secs: 0 | flags: 0 (UNICAST)                    ||
+-------------------------------------------------------------------------
+||                           cIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                       yIAddr: 192.172.16.181                       ||
+-------------------------------------------------------------------------
+||                        sIAddr: 10.33.14.246                        ||
+-------------------------------------------------------------------------
+||                           gIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                         cHAddr: 5-5-5-5-5-5                         ||
+-------------------------------------------------------------------------
+||                               sName:                                ||
+-------------------------------------------------------------------------
+||                                file:                                ||
+=========================================================================
+optionID: 54 optionLength: 4 optionData: 10.33.14.246
+optionID: 53 optionLength: 1 optionData: DHCPOFFER
+optionID: 51 optionLength: 4 optionData: 86400 secs
+=========================================================================
+
+2016-03-14 15:36:07.992 - Server Uptime: 56ms
+DHCPClient: Broadcasting Request Message
+2016-03-14 15:36:08.029 - Server Uptime: 93ms
+DHCPClient: DHCP ACK Message Received
+=========================================================================
+|| Operation Code: 1 | Hardware Type: 1 | Hardware Length: 6 | Hops: 0 ||
+-------------------------------------------------------------------------
+||                               xid: 0                               ||
+-------------------------------------------------------------------------
+||                     secs: 0 | flags: 0 (UNICAST)                    ||
+-------------------------------------------------------------------------
+||                           cIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                           yIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                           sIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                           gIAddr: 0.0.0.0                           ||
+-------------------------------------------------------------------------
+||                         cHAddr: 5-5-5-5-5-5                         ||
+-------------------------------------------------------------------------
+||                               sName:                                ||
+-------------------------------------------------------------------------
+||                                file:                                ||
+=========================================================================
+optionID: 54 optionLength: 4 optionData: 157.54.48.151
+optionID: 53 optionLength: 1 optionData: DHCPREQUEST
+optionID: 61 optionLength: 7 optionData: 5-5-5-5-5-5
+optionID: 50 optionLength: 4 optionData: 192.168.1.9
+optionID: 12 optionLength: 0 optionData: 
+optionID: 55 optionLength: 7 optionData: 1,15,3,44,46,47,6
+=========================================================================
+
