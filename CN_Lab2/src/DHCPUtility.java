@@ -7,47 +7,24 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Shared utilities to use between classesa
- * @author DjLaivz
+ * Utilities to use between classes. 
+ * @author Davide Guglielmi
+ * 		   Arthur Populaire
  *
  */
 public class DHCPUtility {
-	static byte[] mac = null;
+	static byte[] macAddr = null;
 	
-
 	/**
+	 * Returns the mac address "05-05-05-05-05-05" for easy usage for the assignment. 
 	 * 
-	 * @return Returns the MAC Address for the current host's network interface
 	 */
-	/*
 	public static byte[] getMacAddress() {
-		byte[] mac = null;
-		try {
-			InetAddress address = InetAddress.getLocalHost();*/
-			/*
-			 * Get NetworkInterface for the current host and then read the
-			 * hardware address.
-			 *//*
-			NetworkInterface ni = NetworkInterface.getByInetAddress(address);
-			mac = ni.getHardwareAddress();
-			
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (SocketException e) {
-			e.printStackTrace();
-		}
-		assert(mac != null);
-		return mac;
-	}*/
-	
-	public static byte[] getMacAddress() {
-		mac = new byte[6];
-		for(int i = 0; i <mac.length; i++) {
-			mac[i] = (byte)0x05;
-		}
+		macAddr = new byte[6];
+		for(int i = 0; i < macAddr.length; i++) macAddr[i] = (byte)0x05;
 
-		assert(mac != null);
-		return mac;
+		assert(macAddr != null);
+		return macAddr;
 	}
 
 	public static byte[] hexStringToByteArray(String s) {
@@ -59,47 +36,17 @@ public class DHCPUtility {
 	    }
 	    return data;
 	}
-	/*public static void printMacAddress1() {
-		try {
-			InetAddress address = InetAddress.getLocalHost();
-*/
-			/*
-			 * Get NetworkInterface for the current host and then read the
-			 * hardware address.
-			 */
-	/*
-			NetworkInterface ni = NetworkInterface.getByInetAddress(address);
-			byte[] mac = ni.getHardwareAddress();
-
-			System.out.print("Hardware Address for current adapter: ");
-			*/
-			/*
-			 * Extract each array of mac address and convert it to hexa with the
-			 * . * following format 08-00-27-DC-4A-9E.
-			 *//*
-			for (int i = 0; i < mac.length; i++) {
-				System.out.format("%02X%s", mac[i], (i < mac.length - 1) ? "-"
-						: "");
-			}
-			
-			System.out.print("\n");
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (SocketException e) {
-			e.printStackTrace();
-		}
-	}*/
+	
 	public static void printMacAddress() {
 			System.out.print("Hardware Address for current adapter: ");
 			/*
 			 * Extract each array of mac address and convert it to hexa with the
 			 * . * following format 08-00-27-DC-4A-9E.
 			 */
-			for (int i = 0; i < mac.length; i++) {
-				System.out.format("%02X%s", mac[i], (i < mac.length - 1) ? "-"
+			for (int i = 0; i < macAddr.length; i++) {
+				System.out.format("%02X%s", macAddr[i], (i < macAddr.length - 1) ? "-"
 						: "");
 			}
-			
 			System.out.print("\n");
 	}
 	
@@ -118,14 +65,10 @@ public class DHCPUtility {
 			for (int j=7; j >= 0; j--) {
 				if (temp - Math.pow(2,j) >= 0) {
 					bits.flip((byteArray.length-1-i)*8+j);
-					/*System.out.println("flipping bit " + j + "(" 
-							+ Math.pow(2,j) +")"+ "from array element " + i
-							+ "(" + temp +")");*/
 					temp -= Math.pow(2,j);
 				}
 			}
 		} 
-	
 		return bits;
 	}
 	
@@ -140,9 +83,7 @@ public class DHCPUtility {
 		long temp = num;
 		boolean done = false;
 		for (size=0; !done; size++) {
-			if (temp-Math.pow(2,size) < 0) {
-				done = true;
-			}
+			if (temp-Math.pow(2,size) < 0) done = true;
 		}
 		BitSet bits = new BitSet(size);
 		
@@ -156,7 +97,6 @@ public class DHCPUtility {
 				temp -= Math.pow(2,j);
 			}
 		}	
-
 		return bits;
 	}
 
@@ -195,38 +135,7 @@ public class DHCPUtility {
 		String str = new String(Integer.toHexString(new Integer(b & 0xff)));
 		return str;
 	}
-
-	/*
-	//only works for 4 bytes
-	public static byte[] inttobytes(int i){
-		byte[] dword = new byte[4];
-		dword[0] = (byte) ((i >> 24) & 0x000000FF);
-		dword[1] = (byte) ((i >> 16) & 0x000000FF);
-		dword[2] = (byte) ((i >> 8) & 0x000000FF);
-		dword[3] = (byte) (i & 0x00FF);
-		return dword;
-	}
 	
-	public static int bytestoint(byte[] ba){
-		int integer = 0;
-		for (int i=0; i < ba.length; i++) {
-			System.out.printf("byte" + i + ": "+ (ba[i] & 0xff) + " ");
-			integer += (ba[i] & 0xff) * Math.pow(2, 8*i);
-		}
-		System.out.println("integer convesion: " + integer);
-		assert(integer >= 0);
-		return integer;
-	}
-	
-	public static byte[] shorttobytes(short i){
-		byte[] b = new byte[2];
-		b[0] = (byte) ((i >> 8) & 0x000000FF);
-		b[1] = (byte) (i & 0x00FF);
-		return b;
-	}
-	*/
-
-
 	/**
 	 * Converts the first 4 byte values of a byte array to an ip string.
 	 * @param ba - a byte array of 4 bytes
@@ -257,9 +166,7 @@ public class DHCPUtility {
 	public static String printString(byte[] ba, int startIndex) {
 		String str = "";
 		for (int i=startIndex; i < ba.length; i++) {
-			if (ba[i] != 0) {
-				str += (char) ba[i];
-			}
+			if (ba[i] != 0) str += (char) ba[i];
 		}
 		return str;
 	}
@@ -337,9 +244,5 @@ public class DHCPUtility {
 		String str = Long.toString(BitSetToLong(bs));
 		System.out.println(str);
 		return str;
-	}
-	
-	
-	
-	
+	}	
 }
