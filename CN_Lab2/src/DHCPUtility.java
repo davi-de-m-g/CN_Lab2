@@ -12,25 +12,24 @@ import java.util.regex.Pattern;
  *
  */
 public class DHCPUtility {
-	
+	static byte[] mac = null;
 	
 
 	/**
 	 * 
 	 * @return Returns the MAC Address for the current host's network interface
 	 */
+	/*
 	public static byte[] getMacAddress() {
 		byte[] mac = null;
 		try {
-			InetAddress address = InetAddress.getLocalHost();
-
+			InetAddress address = InetAddress.getLocalHost();*/
 			/*
 			 * Get NetworkInterface for the current host and then read the
 			 * hardware address.
-			 */
+			 *//*
 			NetworkInterface ni = NetworkInterface.getByInetAddress(address);
 			mac = ni.getHardwareAddress();
-			//mac =  hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d");test
 			
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
@@ -39,7 +38,18 @@ public class DHCPUtility {
 		}
 		assert(mac != null);
 		return mac;
+	}*/
+	
+	public static byte[] getMacAddress() {
+		mac = new byte[6];
+		for(int i = 0; i <mac.length; i++) {
+			mac[i] = (byte)0x05;
+		}
+
+		assert(mac != null);
+		return mac;
 	}
+
 	public static byte[] hexStringToByteArray(String s) {
 	    int len = s.length();
 	    byte[] data = new byte[len / 2];
@@ -49,23 +59,24 @@ public class DHCPUtility {
 	    }
 	    return data;
 	}
-	public static void printMacAddress() {
+	/*public static void printMacAddress1() {
 		try {
 			InetAddress address = InetAddress.getLocalHost();
-
+*/
 			/*
 			 * Get NetworkInterface for the current host and then read the
 			 * hardware address.
 			 */
+	/*
 			NetworkInterface ni = NetworkInterface.getByInetAddress(address);
 			byte[] mac = ni.getHardwareAddress();
 
 			System.out.print("Hardware Address for current adapter: ");
-			
+			*/
 			/*
 			 * Extract each array of mac address and convert it to hexa with the
 			 * . * following format 08-00-27-DC-4A-9E.
-			 */
+			 *//*
 			for (int i = 0; i < mac.length; i++) {
 				System.out.format("%02X%s", mac[i], (i < mac.length - 1) ? "-"
 						: "");
@@ -77,8 +88,20 @@ public class DHCPUtility {
 		} catch (SocketException e) {
 			e.printStackTrace();
 		}
+	}*/
+	public static void printMacAddress() {
+			System.out.print("Hardware Address for current adapter: ");
+			/*
+			 * Extract each array of mac address and convert it to hexa with the
+			 * . * following format 08-00-27-DC-4A-9E.
+			 */
+			for (int i = 0; i < mac.length; i++) {
+				System.out.format("%02X%s", mac[i], (i < mac.length - 1) ? "-"
+						: "");
+			}
+			
+			System.out.print("\n");
 	}
-
 	
 	/**
 	 * Converts a byte array to a BitSet

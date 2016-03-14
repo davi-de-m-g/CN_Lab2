@@ -101,3 +101,42 @@ optionID: 53 optionLength: 1 optionData: DHCPNAK
 optionID: 56 optionLength: 31 optionData: 114,101,113,117,101,115,116,101,100,32,97,100,100,114,101,115,115,32,110,111,116,32,97,118,97,105,108,97,98,108,101
 =========================================================================
 
+2016-03-14 13:59:19.225 - Server Uptime: 14ms
+DHCPClient: init complete server started
+
+2016-03-14 14:01:16.845 - Server Uptime: 13ms
+DHCPClient: init complete server started
+
+2016-03-14 14:01:19.348 - Server Uptime: 10ms
+DHCPClient: init complete server started
+
+2016-03-14 14:16:01.056 - Server Uptime: 12ms
+DHCPClient: init complete server started
+
+2016-03-14 14:18:15.727 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 14:18:25.717 - Server Uptime: 12ms
+DHCPClient: init complete server started
+
+2016-03-14 14:18:38.977 - Server Uptime: 16ms
+DHCPClient: init complete server started
+
+2016-03-14 14:39:07.399 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 14:47:56.016 - Server Uptime: 16ms
+DHCPClient: init complete server started
+
+2016-03-14 14:49:59.061 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 14:58:47.54 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
+2016-03-14 15:07:57.592 - Server Uptime: 10ms
+DHCPClient: init complete server started
+
+2016-03-14 15:08:11.841 - Server Uptime: 11ms
+DHCPClient: init complete server started
+
